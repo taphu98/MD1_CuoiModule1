@@ -48,25 +48,36 @@ class Depot{
     }
     add(name) {
         if (name.trim() === '') {
-            document.getElementById('chuThich').innerHTML = ' <span style="color: red">The name is not required! Please try again!</span>'
-        } else {
-            this.categoryList.push(new Category(name))
+            alert('Không được để trống')
+            return
+        } else if (this.check(name)) {
+            alert('Đã có trong danh sách')
+            return
         }
+        this.categoryList.push(new Category(name))
         this.show()
     }
+
+
     edit(index) {
         let name = prompt('Category: ', this.categoryList[index].name)
         if (name.trim() === '') {
-            alert('Không được để trống')
-        } else {
-            this.categoryList[index].name = name
+            alert('Không đúng. Hãy sửa lại')
+            return
         }
+        this.categoryList[index].name = name
         this.show()
     }
     delete(index) {
         this.categoryList.splice(index, 1)
         this.show()
     }
+    check(name) {
+        let check = false
+        this.categoryList.forEach(cate => {
+            if (cate.name.toLowerCase() === name.trim().toLowerCase()) check = true
+        })
+        return check}
     show() {
         let div = document.querySelector('#category')
         let select = document.querySelector('#selectCategory')
