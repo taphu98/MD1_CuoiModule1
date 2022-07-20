@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            text-align: center;
+            border: 2px solid black;
+            border-collapse: collapse;
+            line-height: 30px;
+        }
+        tr{
+            border:1px solid black;
+            border-collapse: collapse;
+            background-color: beige;
+            color: darkorchid;
+        }
+        td{
+            border: 1px solid black;
+            width: 500px;
+
+        }
+    </style>
+
+
+
+</head>
+<body>
+<h1 style="text-align: center; color: dodgerblue" >Các loại nhạc </h1>
+<div>
+    <input type="text" id="categoryCreate" placeholder="Thêm loại nhạc">
+    <button>ADD</button><span id="chuThich"></span>
+    <br>
+    <br>
+    <div id="category"></div>
+</div>
+<br>
+<div>
+    <p style="color: blue">SONG NAME:</p>
+    <input id="nameSong" type="text"><br>
+    <p style="color: blue">LYRICS:</p>
+    <textarea id="lyrics" style="width: 200px; height: 200px;background-color: white"></textarea>
+
+    <br>
+    <br>
+    <button id="createSong">CREATE SONG</button>
+    <select id="selectCategory">
+    </select>
+</div>
+<br>
+<div id="songList" ></div>
+<script src="Index.js   "></script>
+
+</body>
+</html>
